@@ -17,6 +17,12 @@ export default function Todo() {
         setItem(initial);
     }
 
+    const handleEnterPress = (e: any) => {
+        if (e.keyCode == 13) {
+            handleAddClick();
+        }
+    }
+
     const handleRemoveClick = (index: number) => {
         console.log(index)
         todos.remove(index);
@@ -31,7 +37,8 @@ export default function Todo() {
                     variant="outlined"
                     color="primary"
                     value={item}
-                    onChange={handleChange} />
+                    onChange={handleChange}
+                    onKeyDown={handleEnterPress} />
                 <Button
                     color="primary"
                     onClick={handleAddClick}>

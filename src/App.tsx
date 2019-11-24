@@ -13,8 +13,11 @@ const theme = createMuiTheme({
   },
 });
 
+
 const App: React.FC = () => {
-  const [hookIndex, setHookIndex] = useState(1);
+  const initial = 0;
+
+  const [hookIndex, setHookIndex] = useState(initial);
 
   const hooks = [
     {
@@ -39,7 +42,7 @@ const App: React.FC = () => {
           <h1>REACT CUSTOM HOOKS</h1>
           <HookSelector
             list={hookOptions}
-            initial={0}
+            initial={hookIndex}
             changeHandler={(val) => setHookIndex(val)}
           />
         </header>
