@@ -13,6 +13,7 @@ export default function Todo() {
         setItem(event.target.value as string);
 
     const handleAddClick = () => {
+        if (!item) { return; }
         todos.add(item);
         setItem(initial);
     }
