@@ -53,7 +53,11 @@ export default function HookSelector({ list, initial, changeHandler }: { list: {
             >
                 {list.map(item => {
                     return (
-                        <option value={item.id}>{item.name}</option>);
+                        <option
+                            key={item.id}
+                            value={item.id}>
+                            {item.name}
+                        </option>);
                 })}
             </Select>
         </FormControl>

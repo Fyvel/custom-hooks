@@ -6,7 +6,7 @@ export default function useArray<T>(initialState: T[] = []) {
     const add = useCallback((newValue: T) => setValue(v => [...v, newValue]), [setValue]);
 
     const remove = useCallback((index: number) =>
-        setValue(val => [...val.splice(index, 1)]),
+        setValue(val => val.splice(index, 1) && [...val]),
         [setValue]);
 
     const filter = useCallback((filter: () => boolean) =>

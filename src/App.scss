@@ -17,7 +17,17 @@
     font-size: calc(10px + 2vmin);
   }
 
-  // &-content {
-    
-  // }
+  &-Todo {
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-list {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+  }
 }

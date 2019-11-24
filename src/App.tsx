@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import LocalStorage from './components/localStorage';
 import useDocumentTitle from './hooks/documentTitle';
@@ -14,7 +14,7 @@ const theme = createMuiTheme({
 });
 
 const App: React.FC = () => {
-  const [hookIndex, setHookIndex] = useState(0);
+  const [hookIndex, setHookIndex] = useState(1);
 
   const hooks = [
     {
