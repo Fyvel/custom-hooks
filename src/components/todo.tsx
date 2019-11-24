@@ -18,7 +18,7 @@ export default function Todo() {
     }
 
     const handleEnterPress = (e: any) => {
-        if (e.keyCode == 13) {
+        if (+e.keyCode === 13) {
             handleAddClick();
         }
     }
@@ -33,7 +33,7 @@ export default function Todo() {
             <h3>Todos</h3>
             <div className="App-Todo-header">
                 <TextField id="outlined-basic"
-                    label="Outlined"
+                    label="Item"
                     variant="outlined"
                     color="primary"
                     value={item}

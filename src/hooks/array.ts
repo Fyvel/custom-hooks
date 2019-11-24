@@ -15,7 +15,7 @@ export default function useArray<T>(initialState: T[] = []) {
 
     const reset = useCallback(() =>
         setValue(() => [...initialState]),
-        [setValue]);
+        [setValue, initialState]);
 
     const hookValue = {
         value,

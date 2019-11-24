@@ -11,7 +11,7 @@ export default function useSessionStorage(key: string, defaultValue: string | nu
         return value;
     });
 
-    useEffect(() => window.sessionStorage.setItem(key, state), [state]);
+    useEffect(() => window.sessionStorage.setItem(key, state), [state, key]);
 
     return [state, setState];
 }

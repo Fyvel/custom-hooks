@@ -11,7 +11,7 @@ export default function useLocalStorage(key: string, defaultValue: string | numb
         return value;
     });
 
-    useEffect(() => window.localStorage.setItem(key, state), [state]);
+    useEffect(() => window.localStorage.setItem(key, state), [state, key]);
 
     return [state, setState];
 }
