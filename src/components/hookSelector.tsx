@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
             margin: theme.spacing(1),
-            minWidth: 120,
+            minWidth: 250,
         },
         selectEmpty: {
             marginTop: theme.spacing(2),
@@ -20,7 +20,13 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function HookSelector({ list, initial, changeHandler }: { list: { id: number, name: string }[], initial: number, changeHandler: (value: any) => void }) {
+interface Props {
+    list: { id: number, name: string }[],
+    initial: number,
+    changeHandler: (value: number) => void
+}
+
+export default function HookSelector({ list, initial, changeHandler }: Props) {
     const classes = useStyles();
     const [state, setState] = useState(initial);
 
@@ -29,7 +35,7 @@ export default function HookSelector({ list, initial, changeHandler }: { list: {
 
     const handleChange = (event: ChangeEvent<{ value: unknown }>) => {
         setState(event.target.value as number);
-        changeHandler(event.target.value);
+        changeHandler(event.target.value as number);
     };
 
     useEffect(() => {

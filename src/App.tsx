@@ -13,27 +13,29 @@ const theme = createMuiTheme({
   },
 });
 
+const hookList = [
+  {
+    title: 'Storage hook',
+    component: <LocalStorage />
+  },
+  {
+    title: 'Array hook',
+    component: <Todo />
+  },
+  {
+    title: 'Virtualized scroll',
+    component: (<div>Coming next...</div>)
+  }
+];
 
 const App: React.FC = () => {
   const initial = 0;
 
-  const [hookIndex, setHookIndex] = useState(initial);
+  const [selectedHook, setSelectedHook] = useState(initial);
 
-  const hooks = [
-    {
-      title: 'Storage hook',
-      component: <LocalStorage />
-    },
-    {
-      title: 'Array hook',
-      component: <Todo />
-    }
-  ];
+  const hookOptions = hookList.map((x, i) => ({ id: i, name: x.title }));
 
-  const hookOptions = hooks.map(
-    (x, i) => ({ id: i, name: x.title }));
-
-  useDocumentTitle(hooks[hookIndex].title);
+  useDocumentTitle(hookList[selectedHook].title);
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,12 +44,12 @@ const App: React.FC = () => {
           <h1>REACT CUSTOM HOOKS</h1>
           <HookSelector
             list={hookOptions}
-            initial={hookIndex}
-            changeHandler={(val) => setHookIndex(val)}
+            initial={selectedHook}
+            changeHandler={setSelectedHook}
           />
         </header>
         <div className="App-content">
-          {hooks[hookIndex].component}
+          {hookList[selectedHook].component}
         </div>
       </div>
     </ThemeProvider>
