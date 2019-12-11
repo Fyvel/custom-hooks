@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent } from "react";
-import { Fragment } from "react";
 import useArray from "../hooks/array";
 import { Button, TextField } from "@material-ui/core";
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
@@ -29,7 +28,7 @@ export default function Todo() {
     }
 
     return (
-        <Fragment>
+        <>
             <h3>Todos</h3>
             <div className="App-Todo-header">
                 <TextField id="outlined-basic"
@@ -60,5 +59,5 @@ export default function Todo() {
                 onClick={() => todos.reset()}>
                 Clear list
             </Button>
-        </Fragment >);
+        </>);
 }
