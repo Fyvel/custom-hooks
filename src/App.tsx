@@ -6,6 +6,7 @@ import Todo from './components/todo';
 import { createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import HookSelector from './components/hookSelector';
+import ScrollingList from './components/scrollingList';
 
 const theme = createMuiTheme({
   palette: {
@@ -24,12 +25,12 @@ const hookList = [
   },
   {
     title: 'Virtualized scroll',
-    component: (<div>Coming next...</div>)
+    component: <ScrollingList />
   }
 ];
 
 const App: React.FC = () => {
-  const initial = 0;
+  const initial = 2;
 
   const [selectedHook, setSelectedHook] = useState(initial);
 
