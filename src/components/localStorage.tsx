@@ -1,5 +1,4 @@
 import React from "react";
-import { Fragment } from "react";
 import Button from '@material-ui/core/Button';
 import useLocalStorage from "../hooks/localStorage";
 import useSessionStorage from "../hooks/sessionStorage";
@@ -9,7 +8,7 @@ export default function LocalStorage() {
     const [sessionKey, setSessionKey] = useSessionStorage('CUSTOM_HOOKS_COUNTER', 0);
 
     return (
-        <Fragment>
+        <>
             <div>
                 <p>Click to update value stored in localStorage</p>
                 <Button variant="contained" color="primary" onClick={() => setLocalKey(localKey + 1)}>Increment counter</Button>
@@ -22,5 +21,5 @@ export default function LocalStorage() {
                 <p>Counter value: {sessionKey}</p>
                 <Button variant="contained" color="secondary" onClick={() => setSessionKey(0)}>Reset counter</Button>
             </div>
-        </Fragment>)
+        </>)
 }

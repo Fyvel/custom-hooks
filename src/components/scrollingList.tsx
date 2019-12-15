@@ -6,7 +6,7 @@ export default function ScrollingList() {
     type Item = { [key: number]: boolean }
 
     const LOADING = true;
-    let itemStatusMap: Item = {};
+    const itemStatusMap: Item = {};
 
     const [itemCount, setItemCount] = useState(100);
     const isItemLoaded = (index: number) => itemStatusMap[index];
