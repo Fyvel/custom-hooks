@@ -9,6 +9,7 @@ export default function LocalStorage() {
 
     return (
         <>
+            <h3>Local & Session storage</h3>
             <div>
                 <p>Click to update value stored in localStorage</p>
                 <Button variant="contained" color="primary" onClick={() => setLocalKey(localKey + 1)}>Increment counter</Button>

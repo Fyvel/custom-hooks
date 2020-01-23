@@ -35,4 +35,26 @@
     display: flex;
     justify-content: center;
   }
+
+  &-Canvas {
+    min-height: 30px;
+    background-color: #282c34;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    &-Item {
+      background-color: #282c34;
+      color: #09d3ac;
+      margin: 2px;
+
+      &:hover {
+        color: #282c34;
+        background-color: #09d3ac;
+        transition: transform 0.5s linear;
+        transform: scale(1.6, 1.6);
+      }
+    }
+  }
 }

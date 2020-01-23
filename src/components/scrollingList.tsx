@@ -38,7 +38,7 @@ export default function ScrollingList() {
 
     return (
         <>
-            <h2>Infinit scroll (stable FPS rate)</h2>
+            <h3>Infinit scroll (stable FPS rate)</h3>
             <div className="App-Scroll">
                 <InfiniteLoader
                     isItemLoaded={isItemLoaded}

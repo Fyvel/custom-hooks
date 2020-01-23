@@ -1,4 +1,5 @@
 // script to enable webpack-bundle-analyzer
+// TODO: fix analyzer
 process.env.NODE_ENV = "production";
 const webpack = require("webpack");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
