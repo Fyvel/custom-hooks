@@ -65,18 +65,15 @@ export default function DebounceSetter() {
                             inputProps={{
                                 name: 'delay',
                                 id: 'outlined-hook-native-simple',
-                            }}
-                        >
-                            {list.map(item => {
-                                return (
-                                    <option
-                                        key={item.id}
-                                        value={item.id}>
-                                        {item.name}
-                                    </option>)
-                            })}
+                            }}>
+                            {list.map(item => (
+                                <option
+                                    key={item.id}
+                                    value={item.id}>
+                                    {item.name}
+                                </option>))}
                         </Select>
-                    </FormControl>`
+                    </FormControl>
                     <TextField id="outlined-basic"
                         label="Input"
                         variant="outlined"
