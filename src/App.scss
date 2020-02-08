@@ -57,4 +57,41 @@
       }
     }
   }
+
+  &-Event {
+    &-box {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+      .input-fields {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-section {
+      flex: 1 1 0;
+
+      .event-items {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+
+  &-Debounce {
+    .box {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .debouncing {
+      font-style: italic;
+    }
+  }
 }

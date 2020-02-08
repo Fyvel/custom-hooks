@@ -8,6 +8,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import HookSelector from './components/hookSelector';
 import ScrollingList from './components/scrollingList';
 import FancyCanvas from './components/fancyCanvas';
+import EventGroup from './components/eventGroup';
+import DebounceSetter from './components/debounceSetter';
 
 const theme = createMuiTheme({
   palette: {
@@ -31,11 +33,19 @@ const hookList = [
   {
     title: 'Fancy canvas',
     component: <FancyCanvas />
+  },
+  {
+    title: 'Event factory',
+    component: <EventGroup />
+  },
+  {
+    title: 'Debouncer',
+    component: <DebounceSetter />
   }
 ];
 
 const App: React.FC = () => {
-  const initial = 3;
+  const initial = 5;
 
   const [selectedHook, setSelectedHook] = useState(initial);
 
