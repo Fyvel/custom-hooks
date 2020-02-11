@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import './App.scss';
-import LocalStorage from './components/localStorage';
+import LocalStorage from './containers/localStorage';
 import useDocumentTitle from './hooks/documentTitle';
-import Todo from './components/todo';
+import Todo from './containers/todo';
 import { createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
-import HookSelector from './components/hookSelector';
-import ScrollingList from './components/scrollingList';
-import FancyCanvas from './components/fancyCanvas';
+import HookSelector from './containers/hookSelector';
+import ScrollingList from './containers/scrollingList';
+import FancyCanvas from './containers/fancyCanvas';
 import EventGroup from './components/eventGroup';
-import DebounceSetter from './components/debounceSetter';
+import DebounceSetter from './containers/debounceSetter';
 
 const theme = createMuiTheme({
   palette: {
@@ -45,7 +45,7 @@ const hookList = [
 ];
 
 const App: React.FC = () => {
-  const initial = 5;
+  const initial = 1;
 
   const [selectedHook, setSelectedHook] = useState(initial);
 

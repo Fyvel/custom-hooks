@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}

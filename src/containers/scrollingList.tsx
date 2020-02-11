@@ -1,5 +1,5 @@
 import React, { useState, CSSProperties, } from "react";
-import { FixedSizeList as List } from "react-window";
+import { FixedSizeList } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
 
 export default function ScrollingList() {
@@ -46,7 +46,7 @@ export default function ScrollingList() {
                     loadMoreItems={loadMoreItems}
                 >
                     {({ onItemsRendered, ref }) => (
-                        <List
+                        <FixedSizeList
                             className="List"
                             height={300}
                             itemCount={itemCount}
@@ -56,7 +56,7 @@ export default function ScrollingList() {
                             width={600}
                         >
                             {Row}
-                        </List>
+                        </FixedSizeList>
                     )}
                 </InfiniteLoader>
             </div>
