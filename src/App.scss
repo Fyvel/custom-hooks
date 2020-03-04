@@ -58,27 +58,19 @@
     }
   }
 
-  &-Event {
-    &-box {
+  &-SyncElement {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  &-section {
+    flex: 1 1 0;
+
+    .event-items {
       display: flex;
-      flex-flow: row wrap;
       justify-content: space-around;
-
-      .input-fields {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    &-section {
-      flex: 1 1 0;
-
-      .event-items {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
+      align-items: center;
     }
   }
 
