@@ -7,18 +7,18 @@ export default function SyncElements() {
 
     const [value, setValue] = useState(0)
 
+    const handleIncrement = () => EventEmitter.dispatch('increment')
+    const handleDecrement = () => EventEmitter.dispatch('decrement')
+
     useEffect(() => {
         EventEmitter.subscribe('increment', () => setValue(value + 1))
         EventEmitter.subscribe('decrement', () => setValue(value - 1))
 
         return () => {
-            EventEmitter.unsubscribe('increment');
-            EventEmitter.unsubscribe('decrement');
+            EventEmitter.unsubscribe('increment')
+            EventEmitter.unsubscribe('decrement')
         }
-    }, [])
-
-    const handleIncrement = () => EventEmitter.dispatch('increment')
-    const handleDecrement = () => EventEmitter.dispatch('decrement')
+    }, [value])
 
     return (
         <>
@@ -31,6 +31,10 @@ export default function SyncElements() {
                     callback={handleDecrement}
                     value={value}
                     text='Decrement' />
+                <Counter color='primary'
+                    callback={handleIncrement}
+                    value={value}
+                    text='Increment' />
             </div>
         </>
     )
