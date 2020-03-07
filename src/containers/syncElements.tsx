@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import EventEmitter from "../event/event"
 import Counter from "src/components/Counter"
 import '../App.scss'
@@ -7,8 +7,15 @@ export default function SyncElements() {
 
     const [value, setValue] = useState(0)
 
-    EventEmitter.subscribe('increment', () => setValue(value + 1))
-    EventEmitter.subscribe('decrement', () => setValue(value - 1))
+    useEffect(() => {
+        EventEmitter.subscribe('increment', () => setValue(value + 1))
+        EventEmitter.subscribe('decrement', () => setValue(value - 1))
+
+        return () => {
+            EventEmitter.unsubscribe('increment');
+            EventEmitter.unsubscribe('decrement');
+        }
+    }, [])
 
     const handleIncrement = () => EventEmitter.dispatch('increment')
     const handleDecrement = () => EventEmitter.dispatch('decrement')

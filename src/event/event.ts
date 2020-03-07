@@ -6,8 +6,11 @@ const CustomEventEmitter = {
         this.events[eventName].forEach((callback: Callback<T>) => callback(data))
     },
     subscribe: function <T>(eventName: string, callback: Callback<T>) {
-        if (!this.events[eventName]) this.events[eventName] = []
+        if (!this.events[eventName]) this.events[eventName] = [];
         this.events[eventName].push(callback)
+    },
+    unsubscribe: function (eventName: string) {
+        this.events[eventName] = [];
     }
 }
 export default CustomEventEmitter;
